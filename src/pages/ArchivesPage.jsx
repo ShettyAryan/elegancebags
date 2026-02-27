@@ -53,7 +53,7 @@ export default function ArchivesPage() {
                     fontFamily: "'Playfair Display', serif",
                     fontStyle: "italic",
                     color: "rgba(0,0,0,0.06)",
-                    zIndex: 0,
+                    zIndex: 10,
                     userSelect: "none",
                     lineHeight: 1,
                   }}

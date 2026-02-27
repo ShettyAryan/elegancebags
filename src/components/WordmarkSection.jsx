@@ -10,6 +10,7 @@ import { CHROME_CIRCLE_IMAGE } from "../data/products";
 export default function WordmarkSection({ bg = "var(--slate-50)" }) {
   return (
     <section
+      className="wordmark-section"
       style={{
         padding: "100px 0",
         display: "flex",
@@ -35,6 +36,17 @@ export default function WordmarkSection({ bg = "var(--slate-50)" }) {
       >
         ELEGANCE
       </h2>
+
+      {/* Mobile burger icon */}
+      <button
+        type="button"
+        className="wordmark-burger"
+        aria-label="Menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
 
       {/* Chrome circle */}
       <div

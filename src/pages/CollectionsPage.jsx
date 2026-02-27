@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import WordmarkSection from "../components/WordmarkSection";
 import { COLLECTIONS, COLLECTION_FILTERS } from "../data/products";
 
 export default function CollectionsPage() {
   useReveal();
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   return (
     <div className="page-enter">
@@ -41,33 +43,50 @@ export default function CollectionsPage() {
       <div className="collections-layout" style={{ display: "flex", gap: 60, padding: "0 48px 120px", maxWidth: 1500, margin: "0 auto" }}>
 
         {/* Sidebar */}
-        <aside style={{ width: 240, flexShrink: 0, position: "sticky", top: 120, alignSelf: "flex-start" }}>
-          <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--primary)", marginBottom: 28 }}>
-            Filter By
-          </p>
-
-          {Object.entries(COLLECTION_FILTERS).map(([group, items]) => (
-            <div key={group} style={{ marginBottom: 36 }}>
-              <p style={{ fontSize: 10, fontWeight: 800, textTransform: "capitalize", letterSpacing: "0.2em", marginBottom: 16 }}>
-                {group}
-              </p>
-              {items.map((item) => (
-                <div
-                  key={item}
-                  className="hover-line"
-                  style={{ fontSize: 13, opacity: 0.5, marginBottom: 10, cursor: "pointer", transition: "opacity 0.2s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.opacity = 1)}
-                  onMouseLeave={(e) => (e.currentTarget.style.opacity = 0.5)}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          ))}
-
-          <button className="btn-pill btn-ghost" style={{ width: "100%", justifyContent: "center", fontSize: 9, padding: "14px 0" }}>
-            Clear Filters
+        <aside
+          className={`collections-filters ${filtersOpen ? "is-open" : ""}`}
+          style={{ width: 240, flexShrink: 0, position: "sticky", top: 120, alignSelf: "flex-start" }}
+        >
+          <button
+            type="button"
+            className="collections-filters-toggle"
+            onClick={() => setFiltersOpen((o) => !o)}
+            aria-expanded={filtersOpen}
+            aria-controls="collections-filters-inner"
+            id="collections-filters-toggle"
+          >
+            <span>Filter By</span>
+            <span className="collections-filters-chevron" aria-hidden>▼</span>
           </button>
+
+          <div id="collections-filters-inner" className="collections-filters-inner" role="region" aria-labelledby="collections-filters-toggle">
+            <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--primary)", marginBottom: 28 }}>
+              Filter By
+            </p>
+
+            {Object.entries(COLLECTION_FILTERS).map(([group, items]) => (
+              <div key={group} style={{ marginBottom: 36 }}>
+                <p style={{ fontSize: 10, fontWeight: 800, textTransform: "capitalize", letterSpacing: "0.2em", marginBottom: 16 }}>
+                  {group}
+                </p>
+                {items.map((item) => (
+                  <div
+                    key={item}
+                    className="hover-line"
+                    style={{ fontSize: 13, opacity: 0.5, marginBottom: 10, cursor: "pointer", transition: "opacity 0.2s" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.opacity = 1)}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = 0.5)}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            ))}
+
+            <button className="btn-pill btn-ghost" style={{ width: "100%", justifyContent: "center", fontSize: 9, padding: "14px 0" }}>
+              Clear Filters
+            </button>
+          </div>
         </aside>
 
         {/* Asymmetric grid */}

@@ -161,6 +161,63 @@ body {
 .nav-link:hover  { opacity: 0.5; }
 .nav-link.active { border-bottom: 1.5px solid currentColor; }
 
+/* ─── NAV BURGER (TABLET & MOBILE) ──────────────────────────────────────── */
+.nav-burger-btn {
+  display: none;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  margin-left: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 600;
+}
+.nav-burger-btn span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--near-black);
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease, bottom 0.25s ease;
+}
+.nav-burger-btn span:nth-child(1) { top: 0; }
+.nav-burger-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-burger-btn span:nth-child(3) { bottom: 0; }
+.nav-burger-btn.open span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.nav-burger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-burger-btn.open span:nth-child(3) {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.nav-mobile-menu {
+  position: fixed;
+  top: 64px;
+  right: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.25);
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 550;
+}
+.nav-mobile-link {
+  justify-content: flex-start;
+  font-size: 11px;
+}
+
 /* ─── HOVER UNDERLINE ────────────────────────────────────────────────────── */
 .hover-line { position: relative; }
 .hover-line::after {
@@ -205,6 +262,38 @@ body {
 }
 .collection-card:hover .collection-card-text {
   transform: translateX(16px);
+}
+
+/* ─── COLLECTIONS FILTERS (COLLAPSIBLE ON TABLET/MOBILE) ─────────────────── */
+.collections-filters-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--slate-50);
+  border: 1.5px solid var(--slate-200);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  transition: background 0.2s, border-color 0.2s;
+}
+.collections-filters-toggle:hover {
+  background: var(--slate-100);
+  border-color: var(--slate-400);
+}
+.collections-filters-chevron {
+  font-size: 8px;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+.collections-filters.is-open .collections-filters-chevron {
+  transform: rotate(-180deg);
 }
 
 /* ─── CARD HOVER ─────────────────────────────────────────────────────────── */
@@ -299,6 +388,14 @@ body {
     padding: 18px 24px !important;
   }
 
+  .nav-links-desktop {
+    display: none !important;
+  }
+
+  .nav-burger-btn {
+    display: inline-block;
+  }
+
   .hero-left-label,
   .hero-right-cta {
     display: none;
@@ -324,6 +421,28 @@ body {
   .carousel-track,
   .about-values-track {
     padding: 10px 32px !important;
+  }
+
+  /* Collections filters: collapse on tablet */
+  .collections-filters {
+    width: 100% !important;
+    max-width: 360px;
+    position: relative !important;
+    top: auto !important;
+  }
+  .collections-filters-toggle {
+    display: flex !important;
+  }
+  .collections-filters-inner {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+  .collections-filters.is-open .collections-filters-inner {
+    max-height: 520px;
+    opacity: 1;
+    margin-top: 16px;
   }
 }
 
@@ -471,5 +590,32 @@ body {
   .archives-registry-grid {
     grid-template-columns: 1fr !important;
     row-gap: 32px !important;
+  }
+
+  /* Wordmark section on mobile */
+  .wordmark-section {
+    padding: 80px 0 !important;
+  }
+  .wordmark-burger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0;
+    cursor: pointer;
+  }
+  .wordmark-burger span {
+    width: 14px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: var(--near-black);
   }
 }

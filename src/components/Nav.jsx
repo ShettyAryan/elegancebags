@@ -9,6 +9,7 @@ const NAV_PAGES = ["Home", "Collections", "Archives", "About"];
  */
 export default function Nav({ page, setPage }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -35,13 +36,16 @@ export default function Nav({ page, setPage }) {
         transition: "all 0.4s ease",
       }}
     >
-      {/* Left links */}
-      <div style={{ display: "flex", gap: 36 }}>
+      {/* Left links (desktop) */}
+      <div className="nav-links-desktop" style={{ display: "flex", gap: 36 }}>
         {NAV_PAGES.slice(0, 2).map((label) => (
           <button
             key={label}
             className={`nav-link ${page === label ? "active" : ""}`}
-            onClick={() => setPage(label)}
+            onClick={() => {
+              setPage(label);
+              setMenuOpen(false);
+            }}
           >
             {label}
           </button>
@@ -63,13 +67,16 @@ export default function Nav({ page, setPage }) {
         </svg>
       </div>
 
-      {/* Right links */}
-      <div style={{ display: "flex", gap: 36, alignItems: "center" }}>
+      {/* Right links (desktop) */}
+      <div className="nav-links-desktop" style={{ display: "flex", gap: 36, alignItems: "center" }}>
         {NAV_PAGES.slice(2).map((label) => (
           <button
             key={label}
             className={`nav-link ${page === label ? "active" : ""}`}
-            onClick={() => setPage(label)}
+            onClick={() => {
+              setPage(label);
+              setMenuOpen(false);
+            }}
           >
             {label}
           </button>
@@ -78,6 +85,37 @@ export default function Nav({ page, setPage }) {
           Cart (0)
         </span>
       </div>
+
+      {/* Burger button (tablet & mobile) */}
+      <button
+        type="button"
+        className={`nav-burger-btn ${menuOpen ? "open" : ""}`}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="nav-mobile-menu">
+          {NAV_PAGES.map((label) => (
+            <button
+              key={label}
+              className={`nav-link nav-mobile-link ${page === label ? "active" : ""}`}
+              onClick={() => {
+                setPage(label);
+                setMenuOpen(false);
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
