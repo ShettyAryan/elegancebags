@@ -48,7 +48,7 @@ export default function CollectionsPage() {
 
           {Object.entries(COLLECTION_FILTERS).map(([group, items]) => (
             <div key={group} style={{ marginBottom: 36 }}>
-              <p style={{ fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.2em", marginBottom: 16, textTransform: "capitalize" }}>
+              <p style={{ fontSize: 10, fontWeight: 800, textTransform: "capitalize", letterSpacing: "0.2em", marginBottom: 16 }}>
                 {group}
               </p>
               {items.map((item) => (
@@ -155,12 +155,12 @@ export default function CollectionsPage() {
 /* ── CollectionCard sub-component ── */
 function CollectionCard({ collection, style, aspect, delay, renderOverlay, showDesc = false }) {
   return (
-    <div className="reveal img-zoom" style={{ cursor: "pointer", ...style }} data-delay={delay}>
-      <div style={{ aspectRatio: aspect, background: "var(--slate-100)", borderRadius: 20, overflow: "hidden", position: "relative" }}>
+    <div className="reveal collection-card" style={{ cursor: "pointer", ...style }} data-delay={delay}>
+      <div className="img-zoom" style={{ aspectRatio: aspect, background: "var(--slate-100)", borderRadius: 20, overflow: "hidden", position: "relative" }}>
         <div style={{ width: "100%", height: "100%", backgroundImage: `url('${collection.image}')`, backgroundSize: "cover", backgroundPosition: "center" }} />
         {renderOverlay && renderOverlay()}
       </div>
-      <div style={{ marginTop: 20 }}>
+      <div className="collection-card-text" style={{ marginTop: 20 }}>
         <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.3em", color: "var(--primary)", textTransform: "uppercase", marginBottom: 6 }}>
           {collection.label}
         </p>
