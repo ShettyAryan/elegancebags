@@ -18,6 +18,7 @@ export default function Nav({ page, setPage }) {
 
   return (
     <nav
+      className="site-nav"
       style={{
         position: "fixed",
         top: 0,

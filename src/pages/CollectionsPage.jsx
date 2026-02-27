@@ -38,7 +38,7 @@ export default function CollectionsPage() {
       </header>
 
       {/* ── MAIN CONTENT ─────────────────────────────────────────────────── */}
-      <div style={{ display: "flex", gap: 60, padding: "0 48px 120px", maxWidth: 1500, margin: "0 auto" }}>
+      <div className="collections-layout" style={{ display: "flex", gap: 60, padding: "0 48px 120px", maxWidth: 1500, margin: "0 auto" }}>
 
         {/* Sidebar */}
         <aside style={{ width: 240, flexShrink: 0, position: "sticky", top: 120, alignSelf: "flex-start" }}>
@@ -71,7 +71,7 @@ export default function CollectionsPage() {
         </aside>
 
         {/* Asymmetric grid */}
-        <div style={{ flex: 1, display: "grid", gridTemplateColumns: "7fr 5fr", gap: "80px 40px" }}>
+        <div className="collections-grid" style={{ flex: 1, display: "grid", gridTemplateColumns: "7fr 5fr", gap: "80px 40px" }}>
 
           {/* Collection 01 — large */}
           <CollectionCard

@@ -28,7 +28,7 @@ export default function ArchivesPage() {
       </header>
 
       {/* ── HORIZONTAL SCROLL TIMELINE ───────────────────────────────────── */}
-      <section style={{ position: "relative", zIndex: 10, padding: "40px 0" }}>
+      <section className="archives-timeline" style={{ position: "relative", zIndex: 10, padding: "40px 0" }}>
         <div
           className="no-scroll"
           style={{ display: "flex", overflowX: "auto", padding: "40px 80px", gap: 80, scrollSnapType: "x mandatory", alignItems: "center" }}
@@ -94,7 +94,7 @@ export default function ArchivesPage() {
       </section>
 
       {/* ── PULL QUOTE ───────────────────────────────────────────────────── */}
-      <section style={{ padding: "120px 48px", textAlign: "center", position: "relative", zIndex: 10 }}>
+      <section className="archives-quote" style={{ padding: "120px 48px", textAlign: "center", position: "relative", zIndex: 10 }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ fontSize: 40, color: "var(--primary)", opacity: 0.4, marginBottom: 24 }}>"</div>
           <blockquote
@@ -111,8 +111,8 @@ export default function ArchivesPage() {
       </section>
 
       {/* ── SEASON REGISTRY ──────────────────────────────────────────────── */}
-      <section style={{ padding: "40px 48px 120px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 10 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
+      <section className="archives-registry" style={{ padding: "40px 48px 120px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 10 }}>
+        <div className="archives-registry-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
           {[0, 1].map((col) => (
             <div key={col}>
               {/* Header row */}

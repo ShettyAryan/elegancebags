@@ -11,6 +11,7 @@ export default function HomePage({ setPage }) {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
+        className="hero-section"
         style={{
           minHeight: "100vh",
           display: "flex",
@@ -77,6 +78,7 @@ export default function HomePage({ setPage }) {
 
         {/* Hero body */}
         <div
+          className="hero-body"
           style={{
             flex: 1,
             display: "flex",
@@ -89,7 +91,7 @@ export default function HomePage({ setPage }) {
         >
           {/* Left label */}
           <div
-            className="reveal-left"
+            className="hero-left-label reveal-left"
             style={{ position: "absolute", left: 48, bottom: "25%", maxWidth: 200 }}
           >
             <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.4em", textTransform: "uppercase", opacity: 0.4, marginBottom: 8 }}>
@@ -127,7 +129,7 @@ export default function HomePage({ setPage }) {
 
           {/* Right CTA */}
           <div
-            className="reveal"
+            className="hero-right-cta reveal"
             style={{ position: "absolute", right: 48, bottom: "25%", textAlign: "right" }}
             data-delay="200"
           >
@@ -144,7 +146,7 @@ export default function HomePage({ setPage }) {
         </div>
 
         {/* Bottom tagline */}
-        <div style={{ padding: "0 48px 48px", display: "flex", justifyContent: "center", zIndex: 2, position: "relative" }}>
+        <div className="hero-tagline" style={{ padding: "0 48px 48px", display: "flex", justifyContent: "center", zIndex: 2, position: "relative" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ width: 40, height: 1, background: "var(--primary)" }} />
             <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.4em", textTransform: "uppercase", color: "var(--primary)" }}>
@@ -160,6 +162,7 @@ export default function HomePage({ setPage }) {
 
       {/* ── ABOUT STRIP ──────────────────────────────────────────────────── */}
       <section
+        className="about-strip"
         style={{
           padding: "120px 48px",
           display: "grid",
@@ -170,7 +173,7 @@ export default function HomePage({ setPage }) {
           margin: "0 auto",
         }}
       >
-        <div className="reveal-left" style={{ position: "sticky", top: 120 }}>
+        <div className="reveal-left about-strip-label" style={{ position: "sticky", top: 120 }}>
           <span
             className="font-serif"
             style={{ fontSize: "clamp(60px, 8vw, 100px)", fontStyle: "italic", color: "var(--primary)", opacity: 0.2, lineHeight: 1 }}
@@ -184,7 +187,7 @@ export default function HomePage({ setPage }) {
 
         <div className="reveal" data-delay="150">
           <p style={{ fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 300, lineHeight: 1.4, color: "var(--slate-600)", marginBottom: 40 }}>
-            Elegance is more than a brand — it's a statement of{" "}
+            Elegance is more than a brand — it&apos;s a statement of{" "}
             <em className="font-serif" style={{ fontStyle: "italic", color: "var(--near-black)" }}>
               high-fashion editorial excellence
             </em>{" "}
@@ -204,11 +207,11 @@ export default function HomePage({ setPage }) {
       </section>
 
       {/* ── NEW ARRIVALS CAROUSEL ─────────────────────────────────────────── */}
-      <section style={{ background: "var(--cornflower)", padding: "80px 0 100px", overflow: "hidden" }}>
-        <div style={{ padding: "0 48px", marginBottom: 48, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+      <section className="carousel-section" style={{ background: "var(--cornflower)", padding: "80px 0 100px", overflow: "hidden" }}>
+        <div className="carousel-header" style={{ padding: "0 48px", marginBottom: 48, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div>
             <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 8 }}>
-              Editor's Pick · New Arrivals · Bestsellers
+              Editor&apos;s Pick · New Arrivals · Bestsellers
             </p>
             <h2 className="font-serif reveal" style={{ fontSize: "clamp(36px, 6vw, 70px)", fontStyle: "italic", color: "white", lineHeight: 1 }}>
               The Azure Series
@@ -242,7 +245,7 @@ export default function HomePage({ setPage }) {
         </div>
 
         <div
-          className="no-scroll"
+          className="no-scroll carousel-track"
           style={{ display: "flex", gap: 24, overflowX: "auto", padding: "10px 48px", scrollSnapType: "x mandatory" }}
         >
           {CAROUSEL_PRODUCTS.map((card) => (
@@ -306,8 +309,8 @@ export default function HomePage({ setPage }) {
       </section>
 
       {/* ── BRAND STORY ──────────────────────────────────────────────────── */}
-      <section style={{ padding: "140px 48px", maxWidth: 1400, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "5fr 7fr", gap: 80, alignItems: "start" }}>
+      <section className="brand-story" style={{ padding: "140px 48px", maxWidth: 1400, margin: "0 auto" }}>
+        <div className="brand-story-grid" style={{ display: "grid", gridTemplateColumns: "5fr 7fr", gap: 80, alignItems: "start" }}>
 
           {/* Left copy */}
           <div className="reveal-left" style={{ paddingTop: 60 }}>
@@ -331,7 +334,7 @@ export default function HomePage({ setPage }) {
           </div>
 
           {/* Right collage */}
-          <div className="reveal" style={{ position: "relative", height: 600 }} data-delay="100">
+          <div className="reveal brand-story-collage" style={{ position: "relative", height: 600 }} data-delay="100">
             {/* Main image */}
             <div
               className="img-zoom"

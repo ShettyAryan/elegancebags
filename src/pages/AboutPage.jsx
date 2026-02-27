@@ -21,7 +21,7 @@ export default function AboutPage() {
       </header>
 
       {/* ── PHILOSOPHY ───────────────────────────────────────────────────── */}
-      <section style={{ padding: "100px 48px", maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <section className="about-philosophy" style={{ padding: "100px 48px", maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
         <div className="reveal img-zoom" style={{ aspectRatio: "3/4", borderRadius: 20, overflow: "hidden", background: "var(--slate-100)" }}>
           <div style={{ width: "100%", height: "100%", backgroundImage: `url('${COLLAGE_IMAGES.craftsmanship}')`, backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
@@ -45,7 +45,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── COLLAGE ──────────────────────────────────────────────────────── */}
-      <section style={{ padding: "20px 48px 100px", background: "white" }}>
+      <section className="about-collage" style={{ padding: "20px 48px 100px", background: "white" }}>
         <div
           style={{
             display: "grid",
@@ -70,22 +70,22 @@ export default function AboutPage() {
 
           <div className="reveal" style={{ gridColumn: "1 / 8", gridRow: "5 / 7", display: "flex", alignItems: "flex-end" }} data-delay="150">
             <p className="font-serif" style={{ fontSize: "clamp(20px, 3vw, 36px)", fontStyle: "italic", color: "var(--slate-400)", lineHeight: 1.3 }}>
-              "The intersection of fluid dynamics<br />and rigid luxury craftsmanship."
+              &quot;The intersection of fluid dynamics<br />and rigid luxury craftsmanship.&quot;
             </p>
           </div>
         </div>
       </section>
 
       {/* ── VALUES ───────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--cornflower)", padding: "100px 0 80px", overflow: "hidden" }}>
-        <div style={{ padding: "0 48px", marginBottom: 60 }}>
+      <section className="about-values" style={{ background: "var(--cornflower)", padding: "100px 0 80px", overflow: "hidden" }}>
+        <div className="about-values-header" style={{ padding: "0 48px", marginBottom: 60 }}>
           <h2 className="font-serif reveal" style={{ fontSize: "clamp(40px, 6vw, 70px)", fontStyle: "italic", color: "white", marginBottom: 16 }}>
             Our Values
           </h2>
           <div style={{ width: 100, height: 3, background: "var(--powder)" }} />
         </div>
 
-        <div className="no-scroll" style={{ display: "flex", gap: 24, padding: "10px 48px", overflowX: "auto" }}>
+        <div className="no-scroll about-values-track" style={{ display: "flex", gap: 24, padding: "10px 48px", overflowX: "auto" }}>
           {BRAND_VALUES.map((v, i) => (
             <div
               key={v.label}
@@ -115,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── FOUNDER QUOTE ────────────────────────────────────────────────── */}
-      <section style={{ padding: "140px 48px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <section className="about-founder" style={{ padding: "140px 48px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
         {/* Chrome circle with pulse */}
         <div
           style={{
@@ -151,8 +151,8 @@ export default function AboutPage() {
             className="font-serif"
             style={{ fontSize: "clamp(22px, 3.5vw, 44px)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.4, color: "var(--slate-600)", marginBottom: 32 }}
           >
-            "We don't create accessories; we create artifacts for the modern silhouette.
-            Elegance is the residue of design done with absolute intention."
+            &quot;We don&apos;t create accessories; we create artifacts for the modern silhouette.
+            Elegance is the residue of design done with absolute intention.&quot;
           </blockquote>
           <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.4em", textTransform: "uppercase", color: "var(--primary)" }}>
             — Founder &amp; Creative Director

@@ -7,6 +7,7 @@ import { FOOTER_LINKS } from "../data/products";
 export default function Footer() {
   return (
     <footer
+      className="site-footer"
       style={{
         background: "var(--slate-950)",
         color: "white",

@@ -291,3 +291,185 @@ body {
   to   { transform: rotate(360deg); }
 }
 .spin-slow { animation: spin-slow 20s linear infinite; }
+
+/* ─── RESPONSIVE LAYOUT (TABLET & MOBILE) ──────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .site-nav {
+    padding: 18px 24px !important;
+  }
+
+  .hero-left-label,
+  .hero-right-cta {
+    display: none;
+  }
+
+  .about-strip,
+  .brand-story,
+  .about-philosophy,
+  .about-collage,
+  .archives-quote,
+  .archives-registry {
+    padding: 80px 32px !important;
+  }
+
+  .hero-tagline {
+    padding: 0 32px 32px !important;
+  }
+
+  .carousel-header {
+    padding: 0 32px !important;
+  }
+
+  .carousel-track,
+  .about-values-track {
+    padding: 10px 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 16px 20px !important;
+  }
+
+  .site-footer {
+    padding: 60px 24px 24px !important;
+  }
+
+  .site-footer > div:nth-child(2) {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 24px !important;
+  }
+
+  .site-footer > div:last-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .hero-section {
+    min-height: auto !important;
+  }
+
+  .hero-body {
+    padding-top: 120px !important;
+  }
+
+  .hero-tagline {
+    padding: 0 20px 28px !important;
+  }
+
+  .about-strip {
+    padding: 80px 20px !important;
+  }
+
+  .about-strip {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .about-strip-label {
+    position: static !important;
+  }
+
+  .about-philosophy {
+    padding: 80px 20px !important;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .about-collage {
+    padding: 40px 20px 80px !important;
+  }
+
+  .about-collage > div {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    height: auto !important;
+  }
+
+  .about-values {
+    padding: 80px 0 60px !important;
+  }
+
+  .about-values-header {
+    padding: 0 20px !important;
+  }
+
+  .about-values-track {
+    padding: 10px 20px 0 !important;
+  }
+
+  .about-founder {
+    padding: 100px 20px !important;
+  }
+
+  .collections-layout {
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 0 20px 80px !important;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .brand-story {
+    padding: 100px 20px !important;
+  }
+
+  .brand-story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .brand-story-collage {
+    height: 420px !important;
+  }
+
+  .carousel-section {
+    padding: 60px 0 80px !important;
+  }
+
+  .carousel-header {
+    padding: 0 20px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .carousel-track {
+    padding: 10px 20px 0 !important;
+  }
+
+  .carousel-track > div {
+    min-width: 280px !important;
+  }
+
+  .archives-timeline {
+    padding: 20px 0 !important;
+  }
+
+  .archives-timeline > div {
+    padding: 20px 20px 40px !important;
+    gap: 40px !important;
+  }
+
+  .archives-timeline > div > div {
+    min-width: 280px !important;
+  }
+
+  .archives-quote {
+    padding: 80px 20px !important;
+  }
+
+  .archives-registry {
+    padding: 20px 20px 80px !important;
+  }
+
+  .archives-registry-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 32px !important;
+  }
+}
